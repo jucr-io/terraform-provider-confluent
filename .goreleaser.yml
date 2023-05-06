@@ -102,14 +102,6 @@ builds:
 #   #   mod_timestamp: '{{ .CommitTimestamp }}'
 
 archives:
-  - name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
-    format: zip
-    files:
-      - README.md
-      - LICENSE
-      - legal/**/*
-
-archives:
 - format: zip
   name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 checksum:
@@ -119,10 +111,6 @@ checksum:
   name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
   algorithm: sha256
 
-checksum:
-  # This suffix is required for Terraform Registry
-  # https://www.terraform.io/docs/registry/providers/publishing.html#manually-preparing-a-release
-  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
 
 signs:
   - artifacts: checksum
