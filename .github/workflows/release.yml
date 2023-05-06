@@ -30,8 +30,8 @@ jobs:
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           GPG_PASSWORD: ${{ secrets.PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload assets
-         uses: actions/upload-artifact@v3
-         with:
-            name: terraform-provider-confluent
-            path: dist/*
+      # - name: Upload assets
+      #    uses: actions/upload-artifact@v3
+      #    with:
+      #       name: terraform-provider-confluent
+      #       path: dist/*
